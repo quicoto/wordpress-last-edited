@@ -21,11 +21,12 @@ function les_init( $atts ){
 
   $html = '<h3>'.$a['text'].'</h3><ul>';
 
-  $pages = get_pages(
+  $pages = get_posts(
     array(
-      'sort_column' => 'post_modified',
-      'sort_order' => 'desc',
-      'number' => $a['number']
+      'numberposts'      => $a['number'],
+      'orderby'          => 'modified',
+      'order'            => 'DESC',
+      'post_type'        => 'page',
     )
   );
 
